@@ -52,7 +52,7 @@ function News(props) {
           }
         >
           <div className="container mt-5" style={{ width: "100%", margin: "20px auto" }}>
-            <div className="row mx-auto" style={{ width: "99%", margin: "20px auto" }}>
+            <div className="row mx-auto d-flex justify-content-center" style={{ width: "99%", margin: "20px auto" }}>
               {
                 news.map((item) => (
                   <NewsCard key={item.id} content={item.description} imgurl={item.image} title={item.title} desc={item.description} />

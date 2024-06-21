@@ -25,8 +25,8 @@ const NewsCard = (props) => {
   }
 
   return (
-    <div className="card mx-2 my-2 col-md-2" style={{ width: "25rem" }}>
-      <img src={props.imgurl || 'default_image_url.jpg'} className="card-img-top mt-2" alt="News Image" />
+    <div className="card  col-md-3 mx-2" style={{ margin:"2rem auto" }}>
+      <img src={props.imgurl || 'default_image_url.jpg'} className="card-img-top mt-2" alt="News Image" style={{height:"40%"}} />
       <div className="card-body">
         <h5 className="card-title">{truncateText(props.title, 50)}</h5>
         <p className="card-text">{truncateText(props.desc, 150)}</p>
