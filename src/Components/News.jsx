@@ -8,23 +8,26 @@ import { list } from '../news/newsSlice'
 import InfiniteScroll from 'react-infinite-scroll-component';
 
 function News(props) {
-  const [page, setPage] = useState(1)
+  const [page, setpage] = useState(1)
   const [loading, setLoading] = useState(true)
   const { news } = useSelector((state) => state.news)
   const dispatch = useDispatch()
 
   const stateChange = (newNews) => {
     dispatch(list({
-      news: [...news, ...newNews]
+      news: newNews
     }))
   }
 
-  const url = `https://api.currentsapi.services/v1/latest-news?apiKey=WoUQpS7tVvjJFJTliUQPfztgN4vsWO3kht6ZhbnCc7PPYzWI&country=IN`
+  document.title = `Mini News | ${props.category}`
+
+  const url = `https://api.currentsapi.services/v1/latest-news?apiKey=BvrPMCHhsKvPkTVP7-wdqrFsCVNBDnB7jiLFKoN2nTKf4B1U&country=IN`
 
   const getData = async () => {
     setLoading(true)
     try {
       const res = await axios.get(`${url}&category=${props.category}&page_number=${page}&page_size=9`)
+
       stateChange(res.data.news)
       setLoading(false)
     } catch (err) {
@@ -39,30 +42,23 @@ function News(props) {
 
   return (
     <>
-      {loading && page === 1 ? <Loader /> :
-        <InfiniteScroll
-          dataLength={news.length}
-          next={() => setPage(page + 1)}
-          hasMore={true}
-          loader={<h4>Loading...</h4>}
-          endMessage={
-            <p style={{ textAlign: 'center' }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
-        >
+      {loading ? <Loader /> :
+       
           <div className="container mt-5" style={{ width: "100%", margin: "20px auto" }}>
-            <h1 style={{textTransform:"capitalize"}} className='mt-5z'>{props.category}</h1>
-            <hr />
+            <h1 style={{textTransform:"capitalize"}}>{props.category}</h1>
             <div className="row mx-auto d-flex justify-content-center" style={{ width: "99%", margin: "20px auto" }}>
               {
                 news.map((item) => (
-                  <NewsCard key={item.id} content={item.description} imgurl={item.image} title={item.title} desc={item.description} />
+                  <NewsCard key={item.id} link={item.url} content={item.description} imgurl={item.image} title={item.title} desc={item.description} />
                 ))
               }
             </div>
+            <div className='d-flex justify-content-between'>
+                    <button className="btn btn-primary" onClick={()=>setpage(page>1?page-1:page)} disabled={page==1}><i class="fa-solid fa-arrow-left"></i></button>
+                    <button className="btn btn-primary" onClick={()=>setpage(page=>page+1)}><i class="fa-solid fa-arrow-right"></i></button>
+                </div>
           </div>
-        </InfiniteScroll>
+        
       }
     </>
   )

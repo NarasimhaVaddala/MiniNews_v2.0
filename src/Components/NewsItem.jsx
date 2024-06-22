@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const NewsItem = (props) => {
-  const { imgurl, title, content } = useSelector((state) => state.counter)
+  const { imgurl, title, content ,link} = useSelector((state) => state.counter)
 
   return (
     <div className='container'>
@@ -14,6 +14,8 @@ const NewsItem = (props) => {
         </div>
         <div className='col-md-6' style={{ textAlign: "justify", lineHeight: "2" }}>
           {content}
+<br />
+          <a target="_blank" href={link} className='btn btn-primary my-2'>View Original Post</a>
         </div>
       </div>
     </div>

@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   imgurl: "",
   content: "",
-  title: ""
+  title: "",
+  link:""
 }
 
 export const counterSlice = createSlice({
@@ -14,6 +15,7 @@ export const counterSlice = createSlice({
       state.imgurl = action.payload.imgurl
       state.content = action.payload.content
       state.title = action.payload.title
+      state.link = action.payload.link
     },
   },
 })

@@ -19,7 +19,8 @@ const NewsCard = (props) => {
     dispatch(brief({
       imgurl: props.imgurl,
       content: props.desc,
-      title: props.title
+      title: props.title,
+      link:props.link
     }))
     console.log("done", { imgurl, title, content });
   }

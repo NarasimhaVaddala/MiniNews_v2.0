@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function About(props) {
+export default function About() {
 
+    document.title = `Mini News | 2.0`
    
     return (
         <>
         <div id='aboutbox' className='container' style={{marginTop:"50px"}}>
         <h1>About App</h1>
-            <p>  Mini News 2.0 is a News App Built By Me. which is modified version for  <a href="https://mininews1.0.netlify.app">MiniNews1.0</a> , v2 is developed because v1 has some limitations in api.
+            <p>  Mini News 2.0 is a News App Built By Me. which is modified version for  <a target="_blank" href="https://mininewsv1.netlify.app/">MiniNews1.0</a> , v2 is developed because v1 has some limitations in api.
                 This is Made Using React JS. This is Made Just to Learn React using Project Based Learning.
                 Still Mini News is a Useful app, You can Read news from different sources fetched from currents Api.
             </p>

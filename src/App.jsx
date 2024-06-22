@@ -6,7 +6,6 @@ import News from './Components/News'
 import { Routes,Route } from 'react-router-dom'
 import NewsItem from './Components/NewsItem'
 import About from './Components/About'
-import ContactPage from './Components/ContactPage'
 
 
 export default function App() {
@@ -24,7 +23,6 @@ export default function App() {
       <Route  path='/technology' element={<News  category="technology" key="technology"/>}/>    
       <Route  path='/brief' element={<NewsItem/>}/>    
       <Route  path='/about' element={<About/>}/>    
-      {/* <Route  path='/contact' element={<ContactPage/>}/>     */}
     </Routes>
     
     </>
