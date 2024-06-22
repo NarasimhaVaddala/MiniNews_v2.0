@@ -122,75 +122,47 @@ body{
     }
    }
 
-   
-   .navbar-nav .nav-item {
-    position: relative; /* Ensure positioning context */
+   /* Style The Dropdown Button */
+.dropbtn {
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
 }
 
-.navbar-nav .nav-item .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #343a40; /* Adjust based on your theme */
-    margin-top: 0.5rem;
-    min-width: 200px; /* Ensure dropdown width */
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.navbar-nav .nav-item:hover .dropdown-menu,
-.navbar-nav .nav-item .dropdown-menu:hover {
-    display: block;
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000000;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-.navbar-nav .nav-item .dropdown-menu .dropdown-item {
-    color: #fff; /* Adjust based on your theme */
-    padding: 0.5rem 1rem; /* Adjust padding for better spacing */
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
-    background-color: #495057; /* Adjust based on your theme */
-}
-.navbar-nav .nav-item {
-    position: relative; /* Ensure positioning context */
-}
-
-.navbar-nav .nav-item .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #343a40; /* Adjust based on your theme */
-    margin-top: 0.5rem;
-    min-width: 200px; /* Ensure dropdown width */
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color:black;
 }
 
-.navbar-nav .nav-item:hover .dropdown-menu,
-.navbar-nav .nav-item .dropdown-menu:hover {
-    display: block;
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
-.navbar-nav .nav-item .dropdown-menu .dropdown-item {
-    color: #fff; /* Adjust based on your theme */
-    padding: 0.5rem 1rem; /* Adjust padding for better spacing */
-}
-
-.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
-    background-color: #495057; /* Adjust based on your theme */
-}
-
-@media (max-width: 992px) {
-    .navbar-nav .nav-item .dropdown-menu {
-        display: none;
-        position: static;
-    }
-
-    .navbar-nav .nav-item .dropdown-menu.show {
-        display: block;
-    }
-
-    .navbar-nav .nav-item .dropdown-toggle::after {
-        content: '';
-        border-top: 0.3em solid;
-        border-right: 0.3em solid transparent;
-        border-left: 0.3em solid transparent;
-        display: inline-block;
-        margin-left: 0.5rem;
-        vertical-align: 0.255em;
-    }
-}
+/* Change the background color of the dropdown button when the dropdown content is shown */
