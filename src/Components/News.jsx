@@ -52,6 +52,8 @@ function News(props) {
           }
         >
           <div className="container mt-5" style={{ width: "100%", margin: "20px auto" }}>
+            <h1 style={{textTransform:"capitalize"}} className='mt-5z'>{props.category}</h1>
+            <hr />
             <div className="row mx-auto d-flex justify-content-center" style={{ width: "99%", margin: "20px auto" }}>
               {
                 news.map((item) => (

@@ -1,3 +1,7 @@
+body{
+    padding-top: 70px;
+}
+
 .loader{
     display: flex;
     align-items: center;
@@ -6,6 +10,11 @@
     width:100%;
     background-color: rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+.navbar{
+    background-color: black !important;
+    color: white !important;
 }
 
 
@@ -112,4 +121,76 @@
      opacity: 0.8;
     }
    }
+
    
+   .navbar-nav .nav-item {
+    position: relative; /* Ensure positioning context */
+}
+
+.navbar-nav .nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #343a40; /* Adjust based on your theme */
+    margin-top: 0.5rem;
+    min-width: 200px; /* Ensure dropdown width */
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu,
+.navbar-nav .nav-item .dropdown-menu:hover {
+    display: block;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    color: #fff; /* Adjust based on your theme */
+    padding: 0.5rem 1rem; /* Adjust padding for better spacing */
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: #495057; /* Adjust based on your theme */
+}
+.navbar-nav .nav-item {
+    position: relative; /* Ensure positioning context */
+}
+
+.navbar-nav .nav-item .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #343a40; /* Adjust based on your theme */
+    margin-top: 0.5rem;
+    min-width: 200px; /* Ensure dropdown width */
+}
+
+.navbar-nav .nav-item:hover .dropdown-menu,
+.navbar-nav .nav-item .dropdown-menu:hover {
+    display: block;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+    color: #fff; /* Adjust based on your theme */
+    padding: 0.5rem 1rem; /* Adjust padding for better spacing */
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: #495057; /* Adjust based on your theme */
+}
+
+@media (max-width: 992px) {
+    .navbar-nav .nav-item .dropdown-menu {
+        display: none;
+        position: static;
+    }
+
+    .navbar-nav .nav-item .dropdown-menu.show {
+        display: block;
+    }
+
+    .navbar-nav .nav-item .dropdown-toggle::after {
+        content: '';
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-left: 0.3em solid transparent;
+        display: inline-block;
+        margin-left: 0.5rem;
+        vertical-align: 0.255em;
+    }
+}
